@@ -1,0 +1,13 @@
+{% extends 'predict_app/base.html' %}
+{% block body-contents %}
+
+<body>
+    <h1>ファイルをアップロード</h1>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">アップロード</button>
+    </form>
+
+</body>
+{% endblock %}

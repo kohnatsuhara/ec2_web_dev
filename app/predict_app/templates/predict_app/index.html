@@ -1,0 +1,11 @@
+{% extends 'predict_app/base.html' %}
+{% block body-contents %}
+<ul>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'file_upload' %}">登録</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'postlist' %}">アイテムリスト</a>
+</li>
+</ul>
+{% endblock %}

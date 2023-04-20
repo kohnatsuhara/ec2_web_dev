@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /home/ubuntu/ec2_web/app:/app
+    tty: true
+    environment:
+     - MECABRC=/etc/mecabrc
+    working_dir: /app

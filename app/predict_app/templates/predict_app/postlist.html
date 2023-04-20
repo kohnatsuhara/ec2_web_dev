@@ -1,0 +1,30 @@
+{% extends 'predict_app/base.html' %}
+{% block body-contents %}
+<body>
+    <table border="1">
+        <tr>
+            <th>タイトル</th>
+            <th>登録者</th>
+            <th>登録日</th>
+            <th>入力データ</th>
+            <th>出力データ</th>
+        </tr>
+
+        {% for article in object_list %}
+        <tr>
+            <th>{{ article.title }}</th>
+            <th>{{ article.author }}</th>
+            <th>{{ article.created_date }}</th>
+            <th><a href={% url 'input_download' article.pk %} >download</a></th>
+            {% if article.result_path == "" %}
+                <th>実行中です</th>
+            {% elif article.result_path == "error" %}
+                <th>エラー</th>
+            {% else %}
+                <th><a href={% url 'result_download' article.pk %} >download</a></th>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+{% endblock %}

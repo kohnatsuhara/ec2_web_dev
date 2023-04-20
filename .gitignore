@@ -1,0 +1,8 @@
+app/model/*
+app/db.sqlite3
+*.pyc
+*.csv
+*.log
+
+!app/model/.gitkeep
+!app/model/processing_dev.py
